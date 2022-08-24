@@ -1,1 +1,36 @@
-# neuraluq
+# NeuralUQ
+Scientific machine learning (SciML) has emerged recently as an effective and powerful tool for data fusion, solving ordinary/partial differential equations (ODEs, PDEs), and learning operator mappings in various scientific and engineering disciplines. Physics-informed neural networks ([PINNs](https://www.sciencedirect.com/science/article/pii/S0021999118307125)) and deep operator networks ([DeepONets](https://www.nature.com/articles/s42256-021-00302-5)) are two such models for solving ODEs/PDEs and learning operator mappings, respectively. Quantifying predictive uncertainties is crucial for risk-sensitive applications as well as for efficient and economical design. **NeuralUQ** is a Python library for uncertainty quantification in various SciML algorithms. In NeuralUQ, each UQ method is decomposed into a surrogate and an inference method for posterior estimation. NeuralUQ has included various surrogates and inference methods, i.e., 
+- Surrogates
+  - Bayesian Neural Networks (BNNs)
+  - Deterministic Neural Networks, e.g., fully-connected neural networks (FNNs)
+  - Deep Generative Models, e.g., Generative Adversarial Nets (GANs)
+- Inference Methods
+  - Sampling methods
+    - Hamiltonian Monte Carlo (HMC)
+    - Langevin Dynamics (LD)
+    - No-U-Turn (NUTS)
+    - Metropolis-adjusted Langevin algorithm (MALA)
+  - Variational Methods
+    - Mean-field Variational Inference (MFVI)
+    - Monte Carlo Dropout (MCD)
+  - Ensemble Methods
+    - Deep ensembles (DEns)
+    - Snapshot ensemble (SEns)
+    - Laplace approximation (LA)
+
+Users can refer to the following papers for more details on the algorithms:
+- [A comprehensive review on uncertainty quantification in scientific machine learning](https://arxiv.org/pdf/2201.07766.pdf)
+- UQ for physics-informed neural nwtworks
+  - [B-PINNs: Bayesian Physics-informed Networks](https://www.sciencedirect.com/science/article/pii/S0021999120306872)
+  - [Learning Functional Priors and Posteriors from Data and Physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
+  - ...
+- UQ for DeepONets
+  - [Learning Functional Priors and Posteriors from Data and Physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
+  - [Bayesian DeepONets](https://arxiv.org/pdf/2111.02484.pdf)
+  - [Randomized Priors](https://arxiv.org/pdf/2203.03048.pdf)
+  - ...
+# Installation
+
+# Explore more
+
+# Cite NeuralUQ
