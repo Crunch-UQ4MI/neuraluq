@@ -36,10 +36,10 @@ if __name__ == "__main__":
     ################################ Build processes #################################
     # build process_f, which is a generator
     generator_branch = neuq.utils.load_network(
-    file_name="../tmp/KU/generator_branch.npy", activation=tf.tanh,
+    file_name="../dataset/pretrained_model/KU/generator_branch.npy", activation=tf.tanh,
     )
     generator_trunk = neuq.utils.load_network(
-        file_name="../tmp/KU/generator_trunk.npy", activation=tf.tanh,
+        file_name="../dataset/pretrained_model/KU/generator_trunk.npy", activation=tf.tanh,
     )
     surrogate_f = neuq.surrogates.Generator(
         branch=generator_branch, trunk=generator_trunk, variable_shape=[100]
@@ -53,10 +53,10 @@ if __name__ == "__main__":
     # 3. build a process with the same prior/posterior but brand new surrogate
     # step 1
     deeponet_branch = neuq.utils.load_network(
-        file_name="../tmp/KU/deeponet_branch.npy", activation=tf.tanh,
+        file_name="../dataset/pretrained_model/KU/deeponet_branch.npy", activation=tf.tanh,
     )
     deeponet_trunk = neuq.utils.load_network(
-        file_name="../tmp/KU/deeponet_trunk.npy", activation=tf.tanh,
+        file_name="../dataset/pretrained_model/KU/deeponet_trunk.npy", activation=tf.tanh,
     )
     deeponet = neuq.surrogates.DeepONet_pretrained(
         trunk=deeponet_trunk, branch=deeponet_branch,
