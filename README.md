@@ -43,7 +43,7 @@ $ python setup.py install
 
 For developers, you could clone the folder to your local machine via
 ```
-$ git clone https://github.com/Crunch-UQ4MI/neuraluq
+$ git clone https://github.com/Crunch-UQ4MI/neuraluq.git
 ```
 
 # Explore more
