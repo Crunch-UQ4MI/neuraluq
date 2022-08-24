@@ -30,6 +30,21 @@ Users can refer to the following papers for more details on the algorithms:
   - [Randomized Priors](https://arxiv.org/pdf/2203.03048.pdf)
   - ...
 # Installation
+**NeuralUQ** requires the following dependencies to be installed:
+
+- Tensorflow 2.9.1
+- TensorFlow Probability 0.17.0
+
+Then install with `python`:
+
+```
+$ python setup.py install
+```
+
+For developers, you could clone the folder to your local machine via
+```
+$ git clone https://github.com/Crunch-UQ4MI/neuraluq
+```
 
 # Explore more
 
