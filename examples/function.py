@@ -32,11 +32,10 @@ def Samplable(x_train, u_train, layers):
     # build model
     model = neuq.models.Model(processes=[process], likelihoods=[likelihood])
     # assign and compile method
-    # Note: HMC is a random method. To reproduce results, setting `seed` to
-    # a non-None value is recommended. It can also help achieve a good acceptance rate for HMC. 
+    # Note: HMC is a random method. A random seed is required if the users would like to reproduce the results on the same machine. 
     # However, different machines with the same seed may also not be able to produce the same results. 
-    # The optimal acceptance rate in theory for HMC is around 0.6. Users can change the parameters to achieve 
-    # a better acceptance rate.
+    # The optimal acceptance rate in theory for HMC is around 0.6. Users can change the parameters, e.g., time step, burnin step,
+    # to achieve a better acceptance rate. NoUTurn which is able to adjust the time step automatically can be used as an more advanced alternative to HMC. 
     method = neuq.inferences.HMC(
         num_samples=1000,
         num_burnin=1000,
