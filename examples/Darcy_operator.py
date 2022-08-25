@@ -1,4 +1,4 @@
-"""NeuralUQ for operator learning on Darcy problem, using deep ensemble method for UQ."""
+"""NeuralUQ for Darcy problem usin Deep Ensembles"""
 
 import neuraluq as neuq
 import neuraluq.variables as neuq_vars
@@ -65,6 +65,7 @@ if __name__ == "__main__":
 
     ################################# Predictions ###################################
     # for in-distribution estimate
+    # The figures presented in Sec. 4.4.2 of the paper are computed using the 87th f as input.
     inputs = loc, f_test
     (u_pred,) = model.predict(inputs, samples, [process_u])
     u_pred = u_pred * (output_std + 1e-7) + output_mean
