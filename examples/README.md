@@ -1,4 +1,4 @@
-We strongly recommend starting from `function.py` example to go through and be familiar with the whole UQ procedure and the **NeuralUQ** library.
+We strongly recommend the users to start with the `function.py` example to go through the whole UQ procedure in **NeuralUQ** library.
 
 # Supported examples
 
