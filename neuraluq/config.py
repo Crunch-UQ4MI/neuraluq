@@ -62,3 +62,7 @@ dtype_name = "float32"
 tf = set_backend(backend_name)
 tfp = tfp
 dtype = set_dtype(dtype_name)
+# TODO: support gpu and user-specified device
+# From our experience, sampling methods like HMC run much faster in cpu than in gpu.
+# For stability, we recommand setting device to be cpu.
+set_device("cpu")
