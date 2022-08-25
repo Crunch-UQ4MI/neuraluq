@@ -71,7 +71,8 @@ if __name__ == "__main__":
     mu_u = np.mean(u_pred, axis=0)
     std_u = np.std(u_pred, axis=0)
     L2 = neuq.metrics.RL2E(mu_u, u_test)
-    print("\nIn-distribution test L2 relative error: ", np.mean(L2))
+    print("\nIn-distribution test L2 relative error: ", L2)
+    print("\nIn-distribution test MSE: ", neuq.metrics.MSE(mu_u, u_test))
 
     # for out-of-distribution estimate
     inputs = loc, f_ood
@@ -81,4 +82,5 @@ if __name__ == "__main__":
     std_u = np.std(u_pred, axis=0)
     L2 = neuq.metrics.RL2E(mu_u, u_ood)
 
-    print("\nIn-distribution test L2 relative error: ", np.mean(L2))
+    print("\nOut-of-distribution test L2 relative error: ", L2)
+    print("\nOut-of-distribution test MSE: ", neuq.metrics.MSE(mu_u, u_ood))
