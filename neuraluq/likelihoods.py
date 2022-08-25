@@ -217,7 +217,6 @@ class MSE_operator(Loss):
         """Return regular mean-squared error."""
         batch_size = self.batch_size
         batch_inputs, batch_targets = self.get_batch(batch_size)
-        print(batch_targets.shape)
         # TODO: support multiple processes
         p = self.processes[0]
         _, out = p.surrogate(batch_inputs, p.trainable_variables)
