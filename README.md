@@ -49,3 +49,12 @@ $ git clone https://github.com/Crunch-UQ4MI/neuraluq.git
 # Explore more
 
 # Cite NeuralUQ
+
+@misc{zou2022neuraluq, <br />
+    title={NeuralUQ: A comprehensive library for uncertainty quantification in neural differential equations and operators}, <br />
+    author={Zongren Zou, Xuhui Meng, Apostolos F Psaros, and George Em Karniadakis}, <br />
+    year={2022}, <br />
+    eprint={2208.11866}, <br />
+    archivePrefix={arXiv}, <br />
+    primaryClass={cs.LG} <br />
+}
