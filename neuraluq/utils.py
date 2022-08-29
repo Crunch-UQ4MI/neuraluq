@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import time
 from functools import wraps
 
+
 def timer(func):
     @wraps(func)
     def wrapper(*args, **kwags):
@@ -13,9 +14,14 @@ def timer(func):
         result = func(*args, **kwags)
         end_time = time.perf_counter()
         T = end_time - start_time
-        print('Execution time for %r function is: %.3f s, %.3f mins'%(func.__name__, T, T/60))
+        print(
+            "Execution time for %r function is: %.3f s, %.3f mins"
+            % (func.__name__, T, T / 60)
+        )
         return result
+
     return wrapper
+
 
 def load_network(file_name, activation=tf.tanh, resnet=False):
     """
