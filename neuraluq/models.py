@@ -4,6 +4,7 @@ import numpy as np
 from . import config
 from .process import GlobalProcesses
 from .config import backend_name, tf
+from . import surrogates
 
 
 class Model:
@@ -94,6 +95,9 @@ class Model:
                     p_inp, p_out = p.surrogate(inputs, samples_dict[p.key])
                 else:
                     _, p_out = p.surrogate(p_inp, samples_dict[p.key])
+                    if isinstance(p.surrogate, surrogates.Identity):
+                        # TODO: deal with constant variables in smarter ways
+                        p_out = tf.reshape(p_out, [-1])
                 args += [p_out]
             _predictions = [pde_fn(p_inp, *args)]
 
