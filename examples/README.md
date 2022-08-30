@@ -22,7 +22,7 @@ We strongly recommend the users to start with the `function.py` example to go th
 
 - Inverse problem for 1-D nonlinear Poisson equation (Samplable), from B-PINN paper: `inverse_poisson_bpinn.py`
 
-- Forward problem for 1-D nonlinear diffusion reaction equation (Samplable), from UQ review paper: `forward_diffusion_reaction.py`
+- Forward problem for 1-D steady nonlinear diffusion reaction equation (Samplable), from UQ review paper: `forward_diffusion_reaction.py`
 
 
 # Working in progress
