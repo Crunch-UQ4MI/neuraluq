@@ -166,7 +166,7 @@ class MCD(_Variational):
     Variational type variable of a fully-connected neural network, parameterized by independent identically 
     distributed Bernoulli random varibales, each of which has a fixed failing probability p and is multiplied 
     by an optimizable value. This is the Bayesian (variational) version of dropout for uncertainty. Notice that
-    the output layer is not parameterized, neither are biases.
+    the output layer is not dropped, neither are biases.
     """
 
     def __init__(self, layers, dropout_rate=0.2, initializer=None, trainable=True):
@@ -200,11 +200,17 @@ class MCD(_Variational):
 
     def sample(self, sample_shape=1):
         samples = []
-        for _v in self.weights:
-            v = tf.tile(_v[None, ...], [sample_shape, 1, 1])
-            samples += [
-                tf.cast(tf.random.uniform(v.shape) > self.dropout_rate, tf.float32) * v
-            ]
+        for i in range(len(self.weights) - 1):
+            v = tf.tile(self.weights[i][None, ...], [sample_shape, 1, 1])
+            drop_or_not = tf.cast(
+                tf.random.uniform(shape=[sample_shape, 1, v.shape[-1]])
+                > self.dropout_rate,
+                tf.float32,
+            )
+            samples += [drop_or_not * v]
+        # weight in the output layer is not dropped out.
+        samples += [tf.tile(self.weights[-1][None, ...], [sample_shape, 1, 1])]
+        # biases are not dropped out.
         for _v in self.biases:
             samples += [tf.tile(_v[None, ...], [sample_shape, 1, 1])]
         return samples
