@@ -23,7 +23,7 @@ Users can refer to this paper for the design and description, as well as the exa
 
 Users can refer to the following papers for more details on the algorithms:
 - [A comprehensive review on uncertainty quantification in scientific machine learning](https://arxiv.org/pdf/2201.07766.pdf)
-- UQ for physics-informed neural nwtworks
+- UQ for physics-informed neural networks
   - [B-PINNs: Bayesian Physics-informed Networks](https://www.sciencedirect.com/science/article/pii/S0021999120306872)
   - [Learning Functional Priors and Posteriors from Data and Physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
   - ...
