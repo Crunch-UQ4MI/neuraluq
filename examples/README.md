@@ -24,7 +24,4 @@ We strongly recommend the users to start with the `function.py` example to go th
 
 - Forward problem for 1-D steady nonlinear diffusion reaction equation (Samplable), from UQ review paper: `forward_diffusion_reaction.py`
 
-
-# Working in progress
-
-- A demonstration of Monte Carlo Dropout in scientific machine learning: `MCD4SciML.ipynb`
+- Monte Carlo dropout in variational inference fashion for uncertainty quantification in scientific machine learning: `Monte_Carlo_dropout_for_SciML.ipynb` 
