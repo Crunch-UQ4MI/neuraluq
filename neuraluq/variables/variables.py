@@ -86,7 +86,7 @@ class _Samplable(Variable):
             )
 
         def _sample(sample_shape=[]):
-            return self.sample(sample_shape) + v.sample(sample_shappe)
+            return self.sample(sample_shape) + v.sample(sample_shape)
 
         new.log_prob = _log_prob
         new.sample = _sample
