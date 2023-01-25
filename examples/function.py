@@ -94,22 +94,25 @@ def Trainable(x_train, u_train, layers):
     # posterior = neuq_vars.fnn.Trainable(
     #     layers=layers, regularizer=tf.keras.regularizers.l2(1e-5),
     # )
+    # method = neuq.inferences.DEns(
+    #     num_iterations=20000,
+    #     num_samples=10,
+    #     optimizer=tf.train.AdamOptimizer(1e-3),
+    # )
     ############# For parallelized training #############
     posterior = neuq_vars.pfnn.Trainable(
         layers=layers, num=95, regularizer=tf.keras.regularizers.l2(1e-5),
     )
+    method = neuq.inferences.DEns(
+        num_iterations=20000,
+        optimizer=tf.train.AdamOptimizer(1e-3),
+        is_parallelized=True,
+    )
+
     process_u = neuq.process.Process(surrogate=surrogate, posterior=posterior)
     loss = neuq.likelihoods.MSE(inputs=x_train, targets=u_train, processes=[process_u])
     model = neuq.models.Model(processes=[process_u], likelihoods=[loss])
 
-    # is_parallelized = False
-    is_parallelized = True
-    method = neuq.inferences.DEns(
-        num_iterations=20000,
-        num_samples=10,
-        optimizer=tf.train.AdamOptimizer(1e-3),
-        is_parallelized=is_parallelized,
-    )
     # method = neuq.inferences.SEns(num_iterations=20000, num_samples=10)
     model.compile(method)
     samples = model.run()
