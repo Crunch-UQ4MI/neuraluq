@@ -33,6 +33,7 @@ def pde_fn(x, u, k_1, k_2):
     f = u_t - tf.exp(k_1) * u * u_x - tf.exp(k_2) * u_xxx
     return f
 
+
 @neuq.utils.timer
 def Samplable(
     x_u_train, t_u_train, u_train, x_f_train, t_f_train, f_train, noise, layers
@@ -81,7 +82,7 @@ def Samplable(
     model.compile(method)
     # obtain posterior samples
     samples, results = model.run()
-    print("Acceptance rate: %.3f \n"%(np.mean(results)))
+    print("Acceptance rate: %.3f \n" % (np.mean(results)))
 
     processes = [process_u, process_logk_1, process_logk_2]
     return processes, samples, model
@@ -130,7 +131,6 @@ def Trainable(
     model.compile(method)
     # obtain posterior samples
     samples = model.run()
-    samples = neuq.utils.batch_samples(samples)  # reshape
 
     processes = [process_u, process_logk_1, process_logk_2]
     return processes, samples, model
@@ -212,7 +212,7 @@ if __name__ == "__main__":
         u_train,
     )
 
-    '''
+    """
     sio.savemat(
         "./Output/kdv_HMC.mat",
         {
@@ -230,4 +230,4 @@ if __name__ == "__main__":
             "k_2": samples_k_2.flatten(),
         },
     )
-    '''
+    """

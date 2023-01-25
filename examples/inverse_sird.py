@@ -36,6 +36,7 @@ def scaling(inputs, a=1, b=0):
     """Applies linear transformation, i.e. a*inputs + b."""
     return a * inputs + b
 
+
 @neuq.utils.timer
 def Samplable(t_u_train, u_train, t_f_train, f_train, noise, N, layers_u, layers_bgn):
     layers_beta = layers_gamma = layers_nu = layers_bgn
@@ -167,7 +168,6 @@ def Trainable(t_u_train, u_train, t_f_train, f_train, noise, N, layers_u, layers
     model.compile(method)
     # obtain posterior samples
     samples = model.run()
-    samples = neuq.utils.batch_samples(samples)
 
     processes = [process_u, process_beta, process_gamma, process_nu]
     return processes, samples, model
