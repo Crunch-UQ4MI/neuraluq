@@ -14,11 +14,15 @@ class DEns(Inference):
 
     def __init__(
         self,
-        num_samples,
         num_iterations,
+        num_samples=None,
         optimizer=tf.train.AdamOptimizer(1e-3),
         is_parallelized=False,
     ):
+        if num_samples is None and is_parallelized is False:
+            raise ValueError(
+                "The number of samples cannot be None when sequential training is performed."
+            )
         self._params = {
             "num_samples": num_samples,
             "num_iterations": num_iterations,
@@ -62,7 +66,7 @@ class DEns(Inference):
                 samples += [self.sampler(sess)]
             samples = utils.batch_samples(samples)
         else:
-            # Obtain ensembles in parallel
+            # Obtain ensembles in parallel and ignore `num_samples`
             samples = self.sampler(sess)
         # Note: each element of samples represents one network. For future computation,
         # it is recommended to stack them to a list, each element of which is a collection
