@@ -97,6 +97,7 @@ def Trainable(t_u_train, u_train, t_f_train, f_train, noise, layers):
     u1_train, u3_train = u_train[:, 0:1], u_train[:, 2:3]
     t2_train, u2_train = t_u_train[:7], u_train[:7, 1:2]
     # build processes
+    ############# Sequential training #############
     process_u = neuq.process.Process(
         surrogate=neuq.surrogates.FNN(layers=layers),
         posterior=neuq_vars.fnn.Trainable(
@@ -111,6 +112,29 @@ def Trainable(t_u_train, u_train, t_f_train, f_train, noise, layers):
         surrogate=neuq.surrogates.Identity(),
         posterior=neuq_vars.const.Trainable(value=0),
     )
+    method = neuq.inferences.DEns(
+        num_samples=20, num_iterations=20000, optimizer=tf.train.AdamOptimizer(1e-3),
+    )
+    ############# Parallelized training #############
+    # num = 70
+    # process_u = neuq.process.Process(
+    #     surrogate=neuq.surrogates.FNN(layers=layers),
+    #     posterior=neuq_vars.pfnn.Trainable(
+    #         layers=layers, num=num, regularizer=tf.keras.regularizers.l2(1e-7)
+    #     ),
+    # )
+    # process_a = neuq.process.Process(
+    #     surrogate=neuq.surrogates.Identity(),
+    #     posterior=neuq_vars.pconst.Trainable(value=0, num=num),
+    # )
+    # process_b = neuq.process.Process(
+    #     surrogate=neuq.surrogates.Identity(),
+    #     posterior=neuq_vars.pconst.Trainable(value=0, num=num),
+    # )
+    # method = neuq.inferences.DEns(
+    #     num_iterations=20000, optimizer=tf.train.AdamOptimizer(1e-3), is_parallelized=True,
+    # )
+
     # build losses
     loss_u13 = neuq.likelihoods.MSE(
         inputs=t_u_train,
@@ -139,9 +163,6 @@ def Trainable(t_u_train, u_train, t_f_train, f_train, noise, layers):
         likelihoods=[loss_u13, loss_u2, loss_f],
     )
     # assign and compile method
-    method = neuq.inferences.DEns(
-        num_samples=20, num_iterations=20000, optimizer=tf.train.AdamOptimizer(1e-3),
-    )
     # method = neuq.inferences.SEns(num_samples=20, num_iterations=20000)
     model.compile(method)
     # obtain posterior samples
@@ -283,8 +304,6 @@ def plots(u_pred, t_test, u_test, t_u_train, u_train):
     u1_train, u3_train = u_train[:, 0:1], u_train[:, 2:3]  # training data
     t2_train, u2_train = t_u_train[:7], u_train[:7, 1:2]  # training data
 
-    neuq.utils.hist(a_pred, name="value of $a$")
-    neuq.utils.hist(b_pred, name="value of $b$")
     neuq.utils.plot1d(
         t_u_train,
         u1_train,
@@ -357,6 +376,8 @@ if __name__ == "__main__":
 
     ############################### Postprocessing ###################################
     plots(u_pred, t_test, u_test, t_u_train, u_train)
+    neuq.utils.hist(a_pred.flatten(), name="value of $a$")
+    neuq.utils.hist(b_pred.flatten(), name="value of $b$")
 
     """
     sio.savemat(
