@@ -29,6 +29,7 @@ def ode_fn(t, u, a, b):
     f3 = u3_t + (a + b) * u1 * u2
     return tf.concat([f1, f2, f3], axis=-1)
 
+
 @neuq.utils.timer
 def Samplable(t_u_train, u_train, t_f_train, f_train, noise, layers):
     u1_train, u3_train = u_train[:, 0:1], u_train[:, 2:3]
@@ -85,7 +86,7 @@ def Samplable(t_u_train, u_train, t_f_train, f_train, noise, layers):
     model.compile(method)
     # obtain posterior samples
     samples, results = model.run()
-    print("Acceptance rate: %.3f \n"%(np.mean(results)))
+    print("Acceptance rate: %.3f \n" % (np.mean(results)))
 
     processes = [process_u, process_a, process_b]
     return processes, samples, model
@@ -145,7 +146,6 @@ def Trainable(t_u_train, u_train, t_f_train, f_train, noise, layers):
     model.compile(method)
     # obtain posterior samples
     samples = model.run()
-    samples = neuq.utils.batch_samples(samples)  # reshape
 
     processes = [process_u, process_a, process_b]
     return processes, samples, model
@@ -338,25 +338,19 @@ if __name__ == "__main__":
     processes, samples, model = Samplable(
         t_u_train, u_train, t_f_train, f_train, noise, layers
     )
-    '''
-    processes, samples, model = Trainable(
-        t_u_train, u_train, t_f_train, f_train, noise, layers
-    )
-    '''
+    # processes, samples, model = Trainable(
+    #     t_u_train, u_train, t_f_train, f_train, noise, layers
+    # )
 
     # Note: Variational tends to work better, visually, if noise for the likelihood is set
     # to be small, based on our experience. However, if the noise is known, we can't justify setting it to a small value,
     # just to produce better-looking results.
-    '''
-    processes, samples, model = Variational(
-        t_u_train, u_train, t_f_train, f_train, noise, layers
-    )
-    '''
-    '''
-    processes, samples, model = MCD(
-        t_u_train, u_train, t_f_train, f_train, noise, layers
-    )
-    '''
+    # processes, samples, model = Variational(
+    #     t_u_train, u_train, t_f_train, f_train, noise, layers
+    # )
+    # processes, samples, model = MCD(
+    #     t_u_train, u_train, t_f_train, f_train, noise, layers
+    # )
 
     ################################# Predictions ####################################
     u_pred, a_pred, b_pred = model.predict(t_test, samples, processes, pde_fn=None)
@@ -364,7 +358,7 @@ if __name__ == "__main__":
     ############################### Postprocessing ###################################
     plots(u_pred, t_test, u_test, t_u_train, u_train)
 
-    '''
+    """
     sio.savemat(
         "./Output/KO_HMC.mat",
         {
@@ -382,4 +376,4 @@ if __name__ == "__main__":
             "noise": noise,
         },
     )
-    '''
+    """
