@@ -87,11 +87,15 @@ class MSE(Loss):
             out = p_out
         else:
             args = []
+            p_inp = None
             # TODO: support in_dims and out_dims
             for p in self.processes:
-                _, p_out = p.surrogate(inputs, p.trainable_variables)
+                if p_inp is None:
+                    p_inp, p_out = p.surrogate(inputs, p.trainable_variables)
+                else:
+                    _, p_out = p.surrogate(p_inp, p.trainable_variables)
                 args += [p_out]
-            out = self.pde(inputs, *args)
+            out = self.pde(p_inp, *args)
         return self.multiplier * tf.reduce_mean((out - targets) ** 2)
 
 
