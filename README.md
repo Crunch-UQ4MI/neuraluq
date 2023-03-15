@@ -19,7 +19,7 @@ Scientific machine learning (SciML) has emerged recently as an effective and pow
     - Laplace approximation (LA)
     
 Users can refer to this paper for the design and description, as well as the examples, of the NeuralUQ library:
-- [NeuralUQ: A comprehensive library for uncertainty quantification in neural differential equations and operators](https://arxiv.org/pdf/2208.11866.pdf))
+- [NeuralUQ: A comprehensive library for uncertainty quantification in neural differential equations and operators](https://arxiv.org/pdf/2208.11866.pdf)
 
 Users can refer to the following papers for more details on the algorithms:
 - [A comprehensive review on uncertainty quantification in scientific machine learning](https://www.sciencedirect.com/science/article/pii/S0021999122009652)
