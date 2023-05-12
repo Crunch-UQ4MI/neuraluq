@@ -61,7 +61,6 @@ if __name__ == "__main__":
 
     ############################# Posterior inference ###############################
     samples = model.run()
-    samples = neuq.utils.batch_samples(samples)
 
     ################################# Predictions ###################################
     # for in-distribution estimate
