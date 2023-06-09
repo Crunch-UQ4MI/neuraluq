@@ -14,7 +14,7 @@ We strongly recommend the users to start with the `function.py` example to go th
 
 - 100-dimensional Darcy problem using PA-GAN-FP (Samplable): `Darcy_FP.py`
 
-- 100-dimensional Darcy problem using Uncertain DeepONet, i.e., DeepONet + deep ensemble (tensorflow.compat.v1, Trainable): `Darcy_operator.py`
+- 100-dimensional Darcy problem using Uncertain DeepONet, i.e., DeepONet + deep ensemble (tensorflow.compat.v1, Trainable): `Darcy_operator.py` (data is available [here](https://drive.google.com/file/d/1SCTJcFtxrN3U80CeU5rT1HQjXdOEJWN8/view?usp=sharing))
 
 - Sine wave regression using different surrogates: `appendix/sine_wave_regression.ipynb`
 
