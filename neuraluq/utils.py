@@ -145,8 +145,8 @@ def plot1d(
         label="2 stds",
     )
     plt.legend()
-    plt.xlabel("$x$")
-    plt.ylabel("$y$")
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.xlim(xlim)
     plt.ylim(ylim)
     plt.title(title)
