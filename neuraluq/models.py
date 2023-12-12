@@ -66,7 +66,7 @@ class Model:
         `samples` as a Python dictionary. Every process in `processes` needs to be stored in
         the model.
         If `pde_fn` is not None, then the prediction is on the quantity defined by `pde_fn`,
-        and `processes` has be stored in order in a list such that, together with `inputs`, 
+        and `processes` has be stored in order in a list such that, together with `inputs`,
         it matches the arguments of `pde_fn`.
         If `pde_fn` is None, then the prediction is on all processes in `processes`.
         """
@@ -97,7 +97,7 @@ class Model:
                     _, p_out = p.surrogate(p_inp, samples_dict[p.key])
                     if isinstance(p.surrogate, surrogates.Identity):
                         # TODO: deal with constant variables in smarter ways
-                        p_out = tf.reshape(p_out, [-1])
+                        p_out = tf.reshape(p_out, [-1, 1, 1])
                 args += [p_out]
             _predictions = [pde_fn(p_inp, *args)]
 
@@ -110,6 +110,7 @@ class Model:
 
     def _compile_mcmc(self, method):
         """Compiles the model with a MCMC-type inference method"""
+
         # build log posterior function
         def log_posterior_fn(*var_list):
             # The computation of log probabilistic density of posterior distribution is
@@ -135,6 +136,7 @@ class Model:
 
     def _compile_vi(self, method):
         """Compiles the model with a VI-type inference method."""
+
         # build negative elbo function
         def neg_elbo_fn(batch_size):
             # The computation of negative ELBO is decomposed into three steps
