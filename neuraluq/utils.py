@@ -117,7 +117,18 @@ def hessian(fn, var_list):
     return tf.hessians(y, x)
 
 
-def plot1d(x, y, x_test, y_test, y_samples, xlim=None, ylim=None, title=""):
+def plot1d(
+    x,
+    y,
+    x_test,
+    y_test,
+    y_samples,
+    xlim=None,
+    ylim=None,
+    xlabel="$x$",
+    ylabel="$y$",
+    title="",
+):
     y_mean = np.mean(y_samples, axis=0)
     y_std = np.std(y_samples, axis=0)
 
@@ -134,8 +145,8 @@ def plot1d(x, y, x_test, y_test, y_samples, xlim=None, ylim=None, title=""):
         label="2 stds",
     )
     plt.legend()
-    plt.xlabel("$x$")
-    plt.ylabel("$y$")
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.xlim(xlim)
     plt.ylim(ylim)
     plt.title(title)
