@@ -35,6 +35,7 @@ Users can refer to the following papers for more details on the algorithms:
 # Installation
 **NeuralUQ** requires the following dependencies to be installed:
 
+- Python 3.7.0
 - Tensorflow 2.9.1
 - TensorFlow Probability 0.17.0
 
