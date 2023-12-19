@@ -96,8 +96,10 @@ class Model:
                 else:
                     _, p_out = p.surrogate(p_inp, samples_dict[p.key])
                     if isinstance(p.surrogate, surrogates.Identity):
-                        # TODO: deal with constant variables in smarter ways
-                        p_out = tf.reshape(p_out, [-1, 1, 1])
+                        if len(p_out.shape) == 1:
+                            p_out = p_out[..., None, None]
+                        elif len(p_out.shape) == 2:
+                            p_out = p_out[..., None]
                 args += [p_out]
             _predictions = [pde_fn(p_inp, *args)]
 
