@@ -26,6 +26,7 @@ Users can refer to the following papers for more details on the algorithms:
 - UQ for physics-informed neural networks
   - [B-PINNs: Bayesian Physics-informed Networks](https://www.sciencedirect.com/science/article/pii/S0021999120306872)
   - [Learning Functional Priors and Posteriors from Data and Physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
+  - [Physics-Informed Generative Adversarial Networks for Stochastic Differential Equations](https://epubs.siam.org/doi/abs/10.1137/18M1225409)
   - ...
 - UQ for DeepONets
   - [Learning Functional Priors and Posteriors from Data and Physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
