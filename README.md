@@ -58,6 +58,9 @@ NeuralUQ for uncertainty quantification in general neural differential equations
 - [Uncertainty quantification in scientific machine learning: Methods, metrics, and comparisons](https://www.sciencedirect.com/science/article/pii/S0021999122009652)
 - [Uncertainty quantification for noisy inputs-outputs in physics-informed neural networks and neural operators](https://arxiv.org/abs/2311.11262)
 
+NeuralUQ for physical model misspecification and uncertainty:
+- [Correcting model misspecification in physics-informed neural networks (PINNs)](https://arxiv.org/abs/2310.10776)
+
 NeuralUQ for Biomechanical constitutive models with experimental data (inferring model parameters from known model and data; inferring functions from pre-trained GAN and data): 
 - [A generative modeling framework for inferring families of biomechanical constitutive laws in data-sparse regimes](https://www.sciencedirect.com/science/article/pii/S0022509623002284?dgcid=rss_sd_all)
 
