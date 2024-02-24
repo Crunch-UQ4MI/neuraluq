@@ -64,8 +64,8 @@ Extensions of NeuralUQ:
 - [L-HYDRA: Multi-Head Physics-Informed Neural Networks](https://arxiv.org/abs/2301.02152)
 
 # Cite NeuralUQ
-
-[@article{zou2024neuraluq,
+```
+@article{zou2024neuraluq,
   title={NeuralUQ: A Comprehensive Library for Uncertainty Quantification in Neural Differential Equations and Operators},
   author={Zou, Zongren and Meng, Xuhui and Psaros, Apostolos F and Karniadakis, George E},
   journal={SIAM Review},
@@ -74,4 +74,5 @@ Extensions of NeuralUQ:
   pages={161--190},
   year={2024},
   publisher={SIAM}
-}](https://epubs.siam.org/doi/abs/10.1137/22M1518189)
+}
+```
