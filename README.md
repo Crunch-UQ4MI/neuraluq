@@ -65,11 +65,13 @@ Extensions of NeuralUQ:
 
 # Cite NeuralUQ
 
-[@misc{zou2022neuraluq, <br />
-    title={NeuralUQ: A comprehensive library for uncertainty quantification in neural differential equations and operators}, <br />
-    author={Zongren Zou, Xuhui Meng, Apostolos F Psaros, and George Em Karniadakis}, <br />
-    year={2022}, <br />
-    eprint={2208.11866}, <br />
-    archivePrefix={arXiv}, <br />
-    primaryClass={cs.LG} <br />
-}](http://arxiv.org/abs/2208.11866)
+[@article{zou2024neuraluq,
+  title={NeuralUQ: A Comprehensive Library for Uncertainty Quantification in Neural Differential Equations and Operators},
+  author={Zou, Zongren and Meng, Xuhui and Psaros, Apostolos F and Karniadakis, George E},
+  journal={SIAM Review},
+  volume={66},
+  number={1},
+  pages={161--190},
+  year={2024},
+  publisher={SIAM}
+}](https://epubs.siam.org/doi/abs/10.1137/22M1518189)
