@@ -31,7 +31,7 @@ Users can refer to the following papers for more details on the algorithms:
 - UQ for DeepONets
   - [Learning Functional Priors and Posteriors from Data and Physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
   - [Bayesian DeepONets](https://arxiv.org/pdf/2111.02484.pdf)
-  - [Randomized Priors](https://arxiv.org/pdf/2203.03048.pdf)
+  - [Randomized Priors](https://www.sciencedirect.com/science/article/pii/S0045782522004595)
   - ...
 # Installation
 **NeuralUQ** requires the following dependencies to be installed:
@@ -56,10 +56,13 @@ $ git clone https://github.com/Crunch-UQ4MI/neuraluq.git
 NeuralUQ for uncertainty quantification in general neural differential equations and operators:
 - [NeuralUQ: A comprehensive library for uncertainty quantification in neural differential equations and operators](https://epubs.siam.org/doi/abs/10.1137/22M1518189)
 - [Uncertainty quantification in scientific machine learning: Methods, metrics, and comparisons](https://www.sciencedirect.com/science/article/pii/S0021999122009652)
-- [Uncertainty quantification for noisy inputs-outputs in physics-informed neural networks and neural operators](https://arxiv.org/abs/2311.11262)
+- [Uncertainty quantification for noisy inputs-outputs in physics-informed neural networks and neural operators](https://www.sciencedirect.com/science/article/pii/S0045782524007333)
 
 NeuralUQ for physical model misspecification and uncertainty:
-- [Correcting model misspecification in physics-informed neural networks (PINNs)](https://arxiv.org/abs/2310.10776)
+- [Correcting model misspecification in physics-informed neural networks (PINNs)](https://www.sciencedirect.com/science/article/pii/S0021999124001670)
+
+NeuralUQ for physics-informed Kolmogorov-Arnold networks (PIKANs):
+- [A comprehensive and FAIR comparison between MLP and KAN representations for differential equations and operator networks](https://www.sciencedirect.com/science/article/pii/S0045782524005462)
 
 NeuralUQ for Biomechanical constitutive models with experimental data (inferring model parameters from known model and data; inferring functions from pre-trained GAN and data): 
 - [A generative modeling framework for inferring families of biomechanical constitutive laws in data-sparse regimes](https://www.sciencedirect.com/science/article/pii/S0022509623002284?dgcid=rss_sd_all)
