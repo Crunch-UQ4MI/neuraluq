@@ -24,15 +24,14 @@ Users can refer to this paper for the design and description, as well as the exa
 Users can refer to the following papers for more details on the algorithms:
 - [A comprehensive review on uncertainty quantification in scientific machine learning](https://www.sciencedirect.com/science/article/pii/S0021999122009652)
 - UQ for physics-informed neural networks
-  - [B-PINNs: Bayesian Physics-informed Networks](https://www.sciencedirect.com/science/article/pii/S0021999120306872)
-  - [Learning Functional Priors and Posteriors from Data and Physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
-  - [Physics-Informed Generative Adversarial Networks for Stochastic Differential Equations](https://epubs.siam.org/doi/abs/10.1137/18M1225409)
-  - [Learning and discovering multiple solutions using physics-informed neural networks with random initialization and deep ensemble](https://arxiv.org/abs/2503.06320)
+  - [B-PINNs: Bayesian physics-informed neural networks](https://www.sciencedirect.com/science/article/pii/S0021999120306872)
+  - [Learning functional priors and posteriors from data and physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
+  - [Physics-informed generative adversarial networks for stochastic differential equations](https://epubs.siam.org/doi/abs/10.1137/18M1225409)
   - ...
 - UQ for DeepONets
-  - [Learning Functional Priors and Posteriors from Data and Physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
+  - [Learning functional priors and posteriors from data and physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
   - [Bayesian DeepONets](https://arxiv.org/abs/2111.02484)
-  - [Randomized Priors](https://www.sciencedirect.com/science/article/pii/S0045782522004595)
+  - [Randomized priors for DeepONets](https://www.sciencedirect.com/science/article/pii/S0045782522004595)
   - ...
 # Installation
 **NeuralUQ** requires the following dependencies to be installed:
@@ -68,6 +67,9 @@ NeuralUQ for physics-informed Kolmogorov-Arnold networks (PIKANs):
 NeuralUQ for Biomechanical constitutive models with experimental data (inferring model parameters from known model and data; inferring functions from pre-trained GAN and data): 
 - [A generative modeling framework for inferring families of biomechanical constitutive laws in data-sparse regimes](https://www.sciencedirect.com/science/article/pii/S0022509623002284?dgcid=rss_sd_all)
 
+NeuralUQ for learning and discovering multiple solutions:
+- [Learning and discovering multiple solutions using physics-informed neural networks with random initialization and deep ensemble](https://arxiv.org/abs/2503.06320)
+
 Extensions of NeuralUQ:
 - [Multi-head physics-informed neural networks for learning functional priors and uncertainty quantification](https://www.sciencedirect.com/science/article/abs/pii/S002199912500230X)
 
@@ -84,3 +86,8 @@ Extensions of NeuralUQ:
   publisher={SIAM}
 }
 ```
+
+
+# The Team
+
+NeuralUQ was developed by Zongren Zou and Xuhui Meng under the supervision of [Professor George Em Karniadakis](https://sites.brown.edu/crunch-group/) at [Brown University](https://www.brown.edu/) between 2022 and 2024, with helpful discussion and invaluable support from [Dr. Apostolos F Psaros](https://www.afpsaros.com/) and [Professor Ling Guo](https://scholar.google.com/citations?user=Ys5ZVhEAAAAJ&hl=en). The project is currently maintained by Zongren Zou at California Institute of Technology and Xuhui Meng at Huazhong University of Science and Technology.
