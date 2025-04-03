@@ -27,10 +27,11 @@ Users can refer to the following papers for more details on the algorithms:
   - [B-PINNs: Bayesian Physics-informed Networks](https://www.sciencedirect.com/science/article/pii/S0021999120306872)
   - [Learning Functional Priors and Posteriors from Data and Physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
   - [Physics-Informed Generative Adversarial Networks for Stochastic Differential Equations](https://epubs.siam.org/doi/abs/10.1137/18M1225409)
+  - [Learning and discovering multiple solutions using physics-informed neural networks with random initialization and deep ensemble](https://arxiv.org/abs/2503.06320)
   - ...
 - UQ for DeepONets
   - [Learning Functional Priors and Posteriors from Data and Physics](https://www.sciencedirect.com/science/article/pii/S0021999122001358)
-  - [Bayesian DeepONets](https://arxiv.org/pdf/2111.02484.pdf)
+  - [Bayesian DeepONets](https://arxiv.org/abs/2111.02484)
   - [Randomized Priors](https://www.sciencedirect.com/science/article/pii/S0045782522004595)
   - ...
 # Installation
@@ -68,7 +69,7 @@ NeuralUQ for Biomechanical constitutive models with experimental data (inferring
 - [A generative modeling framework for inferring families of biomechanical constitutive laws in data-sparse regimes](https://www.sciencedirect.com/science/article/pii/S0022509623002284?dgcid=rss_sd_all)
 
 Extensions of NeuralUQ:
-- [L-HYDRA: Multi-Head Physics-Informed Neural Networks](https://arxiv.org/abs/2301.02152)
+- [Multi-head physics-informed neural networks for learning functional priors and uncertainty quantification](https://www.sciencedirect.com/science/article/abs/pii/S002199912500230X)
 
 # Cite NeuralUQ
 ```
